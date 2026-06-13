@@ -1,0 +1,1542 @@
+/* =========================================================
+   SORRY SWEETHEART ❤️
+   MOBILE FIRST PREMIUM GLASSMORPHIC UI
+   style.css (PART 1 - CORE STYLES)
+========================================================= */
+
+:root{
+
+    --bg1:#ffd6e7;
+    --bg2:#ffe8f4;
+    --bg3:#f3dcff;
+    --bg4:#fff7fb;
+
+    --glass:rgba(255,255,255,.22);
+    --glass-border:rgba(255,255,255,.35);
+
+    --text:#4b2342;
+    --text-soft:#6d4b66;
+
+    --shadow:
+        0 10px 30px rgba(0,0,0,.08);
+
+    --glow:
+        0 0 15px rgba(255,111,168,.5),
+        0 0 35px rgba(255,111,168,.35);
+
+    --radius:28px;
+
+    --transition:.35s ease;
+
+    --max-width:1100px;
+}
+
+body.dark{
+
+    --bg1:#221726;
+    --bg2:#31203a;
+    --bg3:#43274d;
+    --bg4:#19131d;
+
+    --glass:rgba(255,255,255,.08);
+    --glass-border:rgba(255,255,255,.15);
+
+    --text:#fff5fb;
+    --text-soft:#f7d8ff;
+}
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+    overflow-x:hidden;
+}
+
+body{
+    overflow-x:hidden;
+    min-height:100vh;
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    color:var(--text);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--bg1),
+            var(--bg2),
+            var(--bg3),
+            var(--bg4)
+        );
+
+    transition:background .4s ease;
+    position:relative;
+}
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+img{
+    max-width:100%;
+}
+
+button{
+    border:none;
+    outline:none;
+    cursor:pointer;
+    font:inherit;
+}
+
+section{
+    width:100%;
+}
+
+#app{
+    width:min(100%,var(--max-width));
+    margin:auto;
+    padding:
+        clamp(90px,10vw,120px)
+        16px
+        100px;
+}
+
+/* =========================================================
+   LOADER
+========================================================= */
+
+#loader{
+    position:fixed;
+    inset:0;
+    z-index:99999;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffd6e7,
+            #ffe7f3,
+            #f8dbff
+        );
+
+    transition:.8s ease;
+}
+
+#loader.hide{
+    opacity:0;
+    visibility:hidden;
+}
+
+.loader-content{
+    text-align:center;
+    padding:20px;
+}
+
+.loader-heart{
+    font-size:4rem;
+    animation:beat 1s infinite;
+}
+
+.loader-content p{
+    margin-top:15px;
+    color:#6c4162;
+    font-weight:600;
+}
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.background-wrapper{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:-1;
+}
+
+.gradient-bg{
+    position:absolute;
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(255,255,255,.4),
+            transparent 60%
+        );
+}
+
+#floatingHearts,
+#sparkles,
+#flowers,
+#stars,
+#emojiClouds{
+    position:absolute;
+    inset:0;
+}
+
+/* =========================================================
+   GLASSMORPHISM
+========================================================= */
+
+.glass-card{
+
+    background:var(--glass);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid var(--glass-border);
+
+    box-shadow:var(--shadow);
+
+    border-radius:var(--radius);
+}
+
+.glass-icon-btn{
+
+    width:50px;
+    height:50px;
+
+    border-radius:50%;
+
+    background:var(--glass);
+
+    border:1px solid var(--glass-border);
+
+    backdrop-filter:blur(10px);
+
+    color:var(--text);
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+}
+
+.glass-icon-btn:hover{
+    transform:translateY(-3px);
+}
+
+/* =========================================================
+   TOP CONTROLS
+========================================================= */
+
+.top-controls{
+
+    position:fixed;
+
+    right:12px;
+    top:12px;
+
+    z-index:1000;
+
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    text-align:center;
+}
+
+.hero-heading h1{
+
+    font-size:
+        clamp(
+            2rem,
+            7vw,
+            4rem
+        );
+
+    line-height:1.15;
+
+    margin-bottom:14px;
+
+    text-shadow:
+        0 2px 10px rgba(255,255,255,.5);
+}
+
+.subtitle{
+
+    color:var(--text-soft);
+
+    font-size:
+        clamp(
+            .95rem,
+            2.5vw,
+            1.2rem
+        );
+
+    max-width:650px;
+
+    margin:auto;
+}
+
+/* =========================================================
+   APOLOGY CARD
+========================================================= */
+
+.apology-section{
+    margin-top:35px;
+}
+
+.apology-card{
+
+    padding:
+        clamp(20px,4vw,40px);
+
+    text-align:center;
+}
+
+.card-decoration{
+
+    font-size:
+        clamp(1.4rem,5vw,2rem);
+
+    margin-bottom:15px;
+}
+
+.typing-text{
+
+    font-size:
+        clamp(1rem,3vw,1.2rem);
+
+    line-height:1.9;
+
+    min-height:220px;
+
+    color:var(--text);
+}
+
+/* =========================================================
+   CHARACTER
+========================================================= */
+
+.character-section{
+
+    margin-top:45px;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+}
+
+.character{
+
+    width:180px;
+    height:230px;
+
+    position:relative;
+
+    animation:floaty 4s ease-in-out infinite;
+}
+
+.head{
+
+    width:120px;
+    height:120px;
+
+    background:#ffe6cf;
+
+    border-radius:50%;
+
+    margin:auto;
+
+    position:relative;
+}
+
+.hair{
+
+    position:absolute;
+
+    width:120px;
+    height:50px;
+
+    background:#402820;
+
+    border-radius:60px 60px 20px 20px;
+
+    top:0;
+}
+
+.eyes{
+
+    position:absolute;
+
+    width:100%;
+
+    top:50px;
+
+    display:flex;
+    justify-content:space-evenly;
+}
+
+.eye{
+
+    width:20px;
+    height:20px;
+
+    background:#fff;
+
+    border-radius:50%;
+
+    position:relative;
+
+    overflow:hidden;
+
+    animation:blink 5s infinite;
+}
+
+.pupil{
+
+    position:absolute;
+
+    width:10px;
+    height:10px;
+
+    background:#222;
+
+    border-radius:50%;
+
+    left:5px;
+    top:5px;
+}
+
+.blush{
+
+    position:absolute;
+
+    width:20px;
+    height:12px;
+
+    background:#ff8eb7;
+
+    border-radius:50%;
+    opacity:.6;
+}
+
+.blush-left{
+    left:15px;
+    top:70px;
+}
+
+.blush-right{
+    right:15px;
+    top:70px;
+}
+
+.mouth{
+
+    position:absolute;
+
+    width:28px;
+    height:14px;
+
+    border-bottom:3px solid #7b314e;
+
+    border-radius:0 0 30px 30px;
+
+    left:50%;
+    transform:translateX(-50%);
+
+    top:90px;
+}
+
+.body{
+
+    width:80px;
+    height:95px;
+
+    background:#ffd4eb;
+
+    margin:auto;
+    margin-top:-5px;
+
+    border-radius:30px;
+}
+
+.character-message{
+
+    margin-top:15px;
+
+    text-align:center;
+
+    font-weight:600;
+}
+
+/* =========================================================
+   HEART
+========================================================= */
+
+.heart-section{
+
+    margin-top:40px;
+
+    text-align:center;
+}
+
+.main-heart{
+
+    font-size:
+        clamp(
+            4rem,
+            15vw,
+            7rem
+        );
+
+    background:none;
+
+    animation:
+        beat 1.4s infinite;
+
+    filter:
+        drop-shadow(0 0 10px #ff5ca8)
+        drop-shadow(0 0 30px #ff84c3);
+
+    transition:.3s;
+}
+
+.main-heart.active{
+    animation:beat .5s infinite;
+}
+
+.heart-caption{
+    margin-top:10px;
+    font-weight:600;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.button-section{
+    margin-top:45px;
+}
+
+.button-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+    gap:14px;
+}
+
+.love-btn{
+
+    min-height:60px;
+
+    border-radius:24px;
+
+    background:var(--glass);
+
+    backdrop-filter:blur(14px);
+
+    border:1px solid var(--glass-border);
+
+    color:var(--text);
+
+    font-weight:700;
+
+    padding:15px;
+
+    box-shadow:var(--shadow);
+
+    transition:.3s;
+}
+
+.love-btn:active{
+    transform:scale(.96);
+}
+
+.yes-btn:hover{
+    box-shadow:var(--glow);
+}
+
+/* =========================================================
+   RESPONSE BOX
+========================================================= */
+
+.response-section{
+    margin-top:25px;
+}
+
+.response-box{
+
+    padding:20px;
+
+    text-align:center;
+
+    font-weight:600;
+}
+
+/* =========================================================
+   EMOJIS
+========================================================= */
+
+.emoji-row{
+
+    margin-top:35px;
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:12px;
+}
+
+.emoji-row span{
+
+    font-size:1.7rem;
+
+    animation:floaty 4s ease-in-out infinite;
+}
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:18px;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.35s;
+
+    z-index:9999;
+}
+
+.modal.show{
+    opacity:1;
+    visibility:visible;
+}
+
+.modal-overlay{
+
+    position:absolute;
+    inset:0;
+
+    background:
+        rgba(0,0,0,.35);
+
+    backdrop-filter:blur(8px);
+}
+
+.modal-content{
+
+    position:relative;
+
+    width:min(100%,700px);
+
+    max-height:85vh;
+
+    overflow:auto;
+
+    padding:25px;
+
+    z-index:2;
+}
+
+.close-modal{
+
+    position:absolute;
+
+    right:15px;
+    top:15px;
+
+    width:40px;
+    height:40px;
+
+    border-radius:50%;
+
+    background:#fff;
+}
+
+.modal-header{
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.modal-body p{
+    margin-bottom:15px;
+    line-height:1.8;
+}
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+#backToTop{
+
+    position:fixed;
+
+    bottom:20px;
+    right:20px;
+
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+
+    background:#ff7ab5;
+
+    color:white;
+
+    font-size:1.2rem;
+
+    box-shadow:var(--shadow);
+
+    display:none;
+
+    z-index:999;
+}
+
+#backToTop.show{
+    display:block;
+}
+
+/* =========================================================
+   QUOTES
+========================================================= */
+
+.floating-quotes{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:10px;
+
+    margin-bottom:25px;
+}
+
+.quote{
+
+    padding:12px 15px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.25);
+
+    backdrop-filter:blur(8px);
+
+    font-size:.95rem;
+}
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.reveal{
+
+    opacity:0;
+    transform:translateY(40px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.reveal.active{
+
+    opacity:1;
+    transform:none;
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes beat{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.15);
+    }
+}
+
+@keyframes floaty{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+@keyframes blink{
+
+    0%,45%,100%{
+        height:20px;
+    }
+
+    48%,52%{
+        height:3px;
+    }
+}
+
+/* =========================================================
+   TABLET +
+========================================================= */
+
+@media(min-width:768px){
+
+    .button-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .top-controls{
+        flex-direction:row;
+    }
+}
+/* =========================================================
+   style.css PART 2
+   ADVANCED EFFECTS, PARTICLES, FIREWORKS,
+   CHARACTER REACTIONS, DARK MODE ENHANCEMENTS
+========================================================= */
+
+/* ==========================================
+   FLOATING HEARTS
+========================================== */
+
+.floating-heart{
+    position:fixed;
+    pointer-events:none;
+    z-index:5;
+    animation:heartRise linear forwards;
+    will-change:transform,opacity;
+}
+
+@keyframes heartRise{
+
+    0%{
+        transform:
+            translateY(0)
+            scale(.6);
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    100%{
+        transform:
+            translateY(-120vh)
+            rotate(360deg)
+            scale(1.4);
+        opacity:0;
+    }
+}
+
+/* ==========================================
+   CONFETTI
+========================================== */
+
+.confetti{
+
+    position:fixed;
+
+    width:12px;
+    height:12px;
+
+    pointer-events:none;
+
+    z-index:999;
+
+    animation:
+        confettiFall
+        4s linear forwards;
+}
+
+@keyframes confettiFall{
+
+    0%{
+        opacity:1;
+
+        transform:
+            translateY(-30px)
+            rotate(0deg);
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+            translateY(120vh)
+            rotate(900deg);
+    }
+}
+
+/* ==========================================
+   FIREWORK PARTICLES
+========================================== */
+
+.firework{
+
+    position:fixed;
+
+    width:8px;
+    height:8px;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    z-index:1000;
+
+    animation:
+        explode
+        1.3s ease-out forwards;
+}
+
+@keyframes explode{
+
+    from{
+        opacity:1;
+        transform:
+            translate(0,0)
+            scale(1);
+    }
+
+    to{
+        opacity:0;
+        transform:
+            translate(
+                var(--x),
+                var(--y)
+            )
+            scale(0);
+    }
+}
+
+/* ==========================================
+   SPARKLES
+========================================== */
+
+.sparkle{
+
+    position:fixed;
+
+    pointer-events:none;
+
+    z-index:900;
+
+    font-size:1rem;
+
+    animation:
+        sparkleFloat
+        2s ease forwards;
+}
+
+@keyframes sparkleFloat{
+
+    0%{
+        opacity:0;
+        transform:
+            scale(.3)
+            translateY(20px);
+    }
+
+    30%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0;
+        transform:
+            scale(1.5)
+            translateY(-80px);
+    }
+}
+
+/* ==========================================
+   EMOJI REACTION BURSTS
+========================================== */
+
+.emoji-burst{
+
+    position:fixed;
+
+    pointer-events:none;
+
+    z-index:999;
+
+    animation:
+        emojiPop
+        2.5s ease forwards;
+}
+
+@keyframes emojiPop{
+
+    0%{
+        opacity:0;
+        transform:
+            scale(.3)
+            translateY(0);
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0;
+        transform:
+            scale(1.5)
+            translateY(-150px);
+    }
+}
+
+/* ==========================================
+   SCREEN SHAKE
+========================================== */
+
+.shake{
+    animation:
+        screenShake
+        .5s ease;
+}
+
+@keyframes screenShake{
+
+    0%{transform:translateX(0);}
+    20%{transform:translateX(-5px);}
+    40%{transform:translateX(5px);}
+    60%{transform:translateX(-4px);}
+    80%{transform:translateX(4px);}
+    100%{transform:translateX(0);}
+}
+
+/* ==========================================
+   CHARACTER STATES
+========================================== */
+
+.character.happy{
+    animation:
+        jumpHappy .6s ease;
+}
+
+@keyframes jumpHappy{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    40%{
+        transform:translateY(-30px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+}
+
+.character.blushing .blush{
+
+    opacity:1;
+
+    transform:scale(1.3);
+
+    box-shadow:
+        0 0 15px #ff6ca9;
+}
+
+.character.excited{
+
+    animation:
+        excitedBounce .5s infinite;
+}
+
+@keyframes excitedBounce{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+}
+
+.character.hugging{
+
+    transform:scale(1.08);
+}
+
+.character.hugging::after{
+
+    content:"❤️";
+
+    position:absolute;
+
+    font-size:4rem;
+
+    left:50%;
+    top:50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    animation:
+        hugHeart
+        1.5s infinite;
+}
+
+@keyframes hugHeart{
+
+    0%,100%{
+        transform:
+            translate(-50%,-50%)
+            scale(1);
+    }
+
+    50%{
+        transform:
+            translate(-50%,-50%)
+            scale(1.25);
+    }
+}
+
+/* ==========================================
+   PUPPY EYES
+========================================== */
+
+.character.puppy .eye{
+
+    width:26px;
+    height:26px;
+}
+
+.character.puppy .pupil{
+
+    width:12px;
+    height:12px;
+}
+
+/* ==========================================
+   HEART EXPLOSION
+========================================== */
+
+.main-heart.boom{
+
+    animation:
+        boomHeart
+        .8s ease;
+}
+
+@keyframes boomHeart{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.5);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+/* ==========================================
+   GLOW PULSE
+========================================== */
+
+.glowPulse{
+
+    animation:
+        glowPulseAnim
+        2s infinite;
+}
+
+@keyframes glowPulseAnim{
+
+    0%,100%{
+
+        box-shadow:
+            0 0 10px rgba(255,111,168,.3);
+    }
+
+    50%{
+
+        box-shadow:
+            0 0 30px rgba(255,111,168,.8),
+            0 0 60px rgba(255,111,168,.4);
+    }
+}
+
+/* ==========================================
+   TOASTS
+========================================== */
+
+.toast{
+
+    background:
+        rgba(255,255,255,.9);
+
+    color:#4d2d46;
+
+    padding:14px 18px;
+
+    border-radius:20px;
+
+    margin-top:10px;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.1);
+
+    animation:
+        toastIn .4s ease;
+}
+
+@keyframes toastIn{
+
+    from{
+        opacity:0;
+        transform:
+            translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:none;
+    }
+}
+
+#toastContainer{
+
+    position:fixed;
+
+    top:20px;
+    left:50%;
+
+    transform:
+        translateX(-50%);
+
+    z-index:10000;
+}
+
+/* ==========================================
+   CURSOR HEART TRAIL
+========================================== */
+
+.cursor-heart{
+
+    position:fixed;
+
+    pointer-events:none;
+
+    z-index:99999;
+
+    animation:
+        cursorFade
+        1s linear forwards;
+}
+
+@keyframes cursorFade{
+
+    from{
+        opacity:1;
+        transform:scale(1);
+    }
+
+    to{
+        opacity:0;
+        transform:
+            translateY(-20px)
+            scale(1.6);
+    }
+}
+
+/* ==========================================
+   CLOUDS
+========================================== */
+
+.cloud{
+
+    position:absolute;
+
+    width:140px;
+    height:60px;
+
+    background:
+        rgba(255,255,255,.4);
+
+    border-radius:100px;
+
+    filter:blur(4px);
+}
+
+.cloud::before,
+.cloud::after{
+
+    content:"";
+
+    position:absolute;
+
+    background:
+        rgba(255,255,255,.4);
+
+    border-radius:50%;
+}
+
+.cloud::before{
+
+    width:50px;
+    height:50px;
+
+    left:15px;
+    top:-20px;
+}
+
+.cloud::after{
+
+    width:70px;
+    height:70px;
+
+    right:20px;
+    top:-30px;
+}
+
+.cloud1{
+
+    top:8%;
+    left:-200px;
+
+    animation:
+        cloudMove
+        35s linear infinite;
+}
+
+.cloud2{
+
+    top:20%;
+    left:-250px;
+
+    animation:
+        cloudMove
+        50s linear infinite;
+}
+
+.cloud3{
+
+    top:32%;
+    left:-220px;
+
+    animation:
+        cloudMove
+        42s linear infinite;
+}
+
+@keyframes cloudMove{
+
+    from{
+        transform:
+            translateX(0);
+    }
+
+    to{
+        transform:
+            translateX(140vw);
+    }
+}
+
+/* ==========================================
+   STARS
+========================================== */
+
+.star{
+
+    position:absolute;
+
+    width:4px;
+    height:4px;
+
+    border-radius:50%;
+
+    background:white;
+
+    animation:
+        twinkle
+        2s infinite;
+}
+
+@keyframes twinkle{
+
+    0%,100%{
+        opacity:.3;
+    }
+
+    50%{
+        opacity:1;
+    }
+}
+
+/* ==========================================
+   FLOATING QUOTES
+========================================== */
+
+.quote{
+
+    animation:
+        quoteFloat
+        5s ease-in-out infinite;
+}
+
+@keyframes quoteFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-6px);
+    }
+}
+
+/* ==========================================
+   DARK MODE EXTRA
+========================================== */
+
+body.dark .glass-card{
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    background:
+        rgba(255,255,255,.06);
+}
+
+body.dark .love-btn{
+
+    color:#fff5fb;
+}
+
+body.dark .quote{
+
+    background:
+        rgba(255,255,255,.06);
+}
+
+body.dark .close-modal{
+
+    background:
+        rgba(255,255,255,.12);
+
+    color:white;
+}
+
+body.dark .response-box{
+
+    color:#fff;
+}
+
+/* ==========================================
+   PARALLAX HELPERS
+========================================== */
+
+.parallax-slow{
+    transform:
+        translateY(var(--parallax));
+}
+
+.parallax-fast{
+    transform:
+        translateY(calc(var(--parallax) * 1.5));
+}
+
+/* ==========================================
+   MOBILE OPTIMIZATION
+========================================== */
+
+@media(max-width:480px){
+
+    .glass-icon-btn{
+
+        width:46px;
+        height:46px;
+    }
+
+    .character{
+
+        width:150px;
+        height:210px;
+    }
+
+    .head{
+
+        width:100px;
+        height:100px;
+    }
+
+    .body{
+
+        width:70px;
+        height:90px;
+    }
+
+    .modal-content{
+
+        padding:18px;
+    }
+}
+
+/* ==========================================
+   LARGE SCREENS
+========================================== */
+
+@media(min-width:1200px){
+
+    .hero-heading h1{
+
+        font-size:4.5rem;
+    }
+
+    .apology-card{
+
+        padding:50px;
+    }
+}

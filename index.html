@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#ffd6e7" />
+    <meta
+        name="description"
+        content="A cute romantic apology website for sweetheart."
+    />
+
+    <title>🥺❤️ Sorry Sweetheart ❤️🥺</title>
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- =========================
+         LOADER
+    ========================== -->
+    <div id="loader">
+        <div class="loader-content">
+            <div class="loader-heart">❤️</div>
+            <p>Preparing something special for my sweetheart...</p>
+        </div>
+    </div>
+
+    <!-- =========================
+         BACKGROUND LAYERS
+    ========================== -->
+    <div class="background-wrapper">
+
+        <div class="gradient-bg"></div>
+
+        <div id="floatingHearts"></div>
+
+        <div id="sparkles"></div>
+
+        <div id="flowers"></div>
+
+        <div id="clouds">
+            <span class="cloud cloud1"></span>
+            <span class="cloud cloud2"></span>
+            <span class="cloud cloud3"></span>
+        </div>
+
+        <div id="stars"></div>
+
+        <div id="emojiClouds"></div>
+
+    </div>
+
+    <!-- =========================
+         PARTICLE CANVAS
+    ========================== -->
+    <canvas id="effectsCanvas"></canvas>
+
+    <!-- =========================
+         CURSOR TRAIL
+    ========================== -->
+    <div id="cursorTrailContainer"></div>
+
+    <!-- =========================
+         TOAST CONTAINER
+    ========================== -->
+    <div id="toastContainer"></div>
+
+    <!-- =========================
+         TOP CONTROLS
+    ========================== -->
+    <div class="top-controls">
+
+        <button
+            id="themeToggle"
+            class="glass-icon-btn"
+            aria-label="Toggle Theme"
+        >
+            🌙
+        </button>
+
+        <button
+            id="soundToggle"
+            class="glass-icon-btn"
+            aria-label="Toggle Sound"
+        >
+            🔊
+        </button>
+
+        <button
+            id="replayBtn"
+            class="glass-icon-btn"
+            aria-label="Replay Animations"
+        >
+            🔄
+        </button>
+
+        <button
+            id="shareBtn"
+            class="glass-icon-btn"
+            aria-label="Share Love"
+        >
+            💌
+        </button>
+
+    </div>
+
+    <!-- =========================
+         MAIN APP
+    ========================== -->
+    <main id="app">
+
+        <!-- Floating Quotes -->
+        <section class="floating-quotes">
+
+            <div class="quote">
+                ❤️ You are my favorite hello.
+            </div>
+
+            <div class="quote">
+                💖 Every heartbeat whispers your name.
+            </div>
+
+            <div class="quote">
+                ✨ My world shines brighter with you.
+            </div>
+
+        </section>
+
+        <!-- Hero -->
+        <section class="hero reveal">
+
+            <div class="hero-heading">
+                <h1>
+                    🥺❤️ Sorry Sweetheart ❤️🥺
+                </h1>
+
+                <p class="subtitle">
+                    A little place made with love, hope,
+                    and a heart that wants to make you smile.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- Main Apology Card -->
+        <section class="apology-section reveal">
+
+            <div class="glass-card apology-card">
+
+                <div class="card-decoration">
+                    🌸 💖 ✨ 🎀 🐻 💞
+                </div>
+
+                <div id="typingText" class="typing-text">
+                    <!-- Typed by JS -->
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Character -->
+        <section class="character-section reveal">
+
+            <div id="character" class="character">
+
+                <div class="head">
+
+                    <div class="hair"></div>
+
+                    <div class="eyes">
+
+                        <span class="eye left-eye">
+                            <span class="pupil"></span>
+                        </span>
+
+                        <span class="eye right-eye">
+                            <span class="pupil"></span>
+                        </span>
+
+                    </div>
+
+                    <div class="blush blush-left"></div>
+                    <div class="blush blush-right"></div>
+
+                    <div class="mouth"></div>
+
+                </div>
+
+                <div class="body"></div>
+
+            </div>
+
+            <div class="character-message">
+                🥺 I really hope you can forgive me ❤️
+            </div>
+
+        </section>
+
+        <!-- Heart Interaction -->
+        <section class="heart-section reveal">
+
+            <button
+                id="mainHeart"
+                class="main-heart"
+                aria-label="Love Heart"
+            >
+                ❤️
+            </button>
+
+            <p class="heart-caption">
+                Tap my heart 💖
+            </p>
+
+        </section>
+
+        <!-- Buttons -->
+        <section class="button-section reveal">
+
+            <div class="button-grid">
+
+                <button
+                    id="yesBtn"
+                    class="love-btn yes-btn"
+                >
+                    YES ❤️
+                </button>
+
+                <button
+                    id="maybeBtn"
+                    class="love-btn maybe-btn"
+                >
+                    MAYBE 🥺
+                </button>
+
+                <button
+                    id="hugBtn"
+                    class="love-btn hug-btn"
+                >
+                    HUG ME 🤗
+                </button>
+
+                <button
+                    id="letterBtn"
+                    class="love-btn letter-btn"
+                >
+                    READ MY HEART 💌
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- Result Message -->
+        <section class="response-section">
+
+            <div
+                id="responseBox"
+                class="glass-card response-box"
+            >
+                ❤️ Waiting for your smile...
+            </div>
+
+        </section>
+
+        <!-- Extra Cute Emojis -->
+        <section class="emoji-row reveal">
+
+            <span>🥺</span>
+            <span>❤️</span>
+            <span>💖</span>
+            <span>💞</span>
+            <span>💌</span>
+            <span>🌸</span>
+            <span>✨</span>
+            <span>🌷</span>
+            <span>🎀</span>
+            <span>🐻</span>
+            <span>🤗</span>
+
+        </section>
+
+    </main>
+
+    <!-- =========================
+         LOVE LETTER MODAL
+    ========================== -->
+    <div id="letterModal" class="modal">
+
+        <div class="modal-overlay"></div>
+
+        <div class="modal-content glass-card">
+
+            <button
+                id="closeModal"
+                class="close-modal"
+                aria-label="Close"
+            >
+                ✕
+            </button>
+
+            <div class="modal-header">
+
+                <h2>
+                    💌 My Heart To Yours 💌
+                </h2>
+
+            </div>
+
+            <div class="modal-body">
+
+                <p>
+                    My Sweetheart ❤️,
+                </p>
+
+                <p>
+                    I don't know if words can fully
+                    express how sorry I am, but I want
+                    to try with all my heart. Lately,
+                    I've been thinking about the moments
+                    where I hurt your feelings, and it
+                    breaks my heart knowing that I became
+                    the reason behind your sadness.
+                </p>
+
+                <p>
+                    You deserve kindness, understanding,
+                    patience, and love. I know I haven't
+                    always shown those things perfectly,
+                    and for that, I am truly sorry. Every
+                    day reminds me of how important you
+                    are to me. Your smile brightens my
+                    darkest moments, your voice comforts
+                    me, and your presence makes ordinary
+                    days feel special.
+                </p>
+
+                <p>
+                    When I think about losing your trust,
+                    it scares me because you mean so much
+                    more than words can describe. You are
+                    not just someone I care about—you are
+                    someone whose happiness matters deeply
+                    to me. I never want my actions to make
+                    you doubt how precious you are.
+                </p>
+
+                <p>
+                    I know forgiveness isn't something I
+                    can demand. It is something I must earn
+                    through effort, honesty, and change.
+                    That's why I promise to keep trying,
+                    keep learning, and keep becoming a
+                    better person for both of us.
+                </p>
+
+                <p>
+                    No matter how difficult things become,
+                    my feelings for you remain genuine.
+                    Every heartbeat quietly reminds me of
+                    your importance in my life. Every dream
+                    of the future feels brighter when I
+                    imagine you in it.
+                </p>
+
+                <p>
+                    If you're still hurting, I understand.
+                    If you need time, I understand that too.
+                    I simply hope that one day you can see
+                    the sincerity behind these words and
+                    the love behind this little effort.
+                </p>
+
+                <p>
+                    Thank you for being you. Thank you for
+                    every smile, every memory, and every
+                    beautiful moment we've shared.
+                </p>
+
+                <p>
+                    With all my love,
+                    ❤️🥺💖🌸✨
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- =========================
+         BACK TO TOP
+    ========================== -->
+    <button
+        id="backToTop"
+        aria-label="Back To Top"
+    >
+        ↑
+    </button>
+
+    <!-- =========================
+         OPTIONAL AUDIO
+         Replace files later
+    ========================== -->
+
+    <audio id="heartSound" preload="auto">
+        <source src="heart.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="bgMusic" loop preload="auto">
+        <source src="romantic-music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- =========================
+         SCRIPT
+    ========================== -->
+    <script src="script.js"></script>
+
+</body>
+</html>
